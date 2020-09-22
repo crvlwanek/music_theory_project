@@ -21,6 +21,8 @@ FREQUENCIES = []
 MODES = {"lydian": [4, "F"], "major": [1, "C"], "mixolydian": [5, "G"],
          "dorian": [2, "D"], "minor": [6, "A"], "phrygian": [2, "E"], "locrian": [7, "B"]}
 
+MAJOR_STEPS = [0, 2, 4, 5, 7, 9, 11]
+
 
 def choose_enh(chr_index, accidental):
     for k, v in NOTES.items():
@@ -28,63 +30,119 @@ def choose_enh(chr_index, accidental):
             return k
 
 
-def add_fifth(pitch):
-    pitch += 7
+def add_interval(pitch, interval):
+    pitch += interval
     if pitch >= 12:
         pitch = pitch % 12
     return pitch
 
 
-def circle(step):
-    step += 3
-    if step > 7:
+def add_fifth(pitch):
+    return add_interval(pitch, 7)
+
+
+def circle_fifth(step):
+    step += 4
+    if step > 6:
         step = step % 7
     return step
 
 
-sharp_offset = 7
-natural_offset = 7
-for mode, info in MODES.items():
-    info.append([])
-    p = NOTES[info[1]][0]
-    acc = 0
-    for i in range(sharp_offset):
-        info[2].append(choose_enh(p, acc))
-        p = add_fifth(p)
-    acc = 1
-    for i in range(8 - sharp_offset):
-        info[2].append(choose_enh(p, acc))
-        p = add_fifth(p)
-    p = (NOTES[info[1]][0] + 11) % 12
-    acc = -1
-    for i in range(natural_offset):
-        info[2].append(choose_enh(p, acc))
-        p = add_fifth(p)
-    acc = 0
-    for i in range(7 - natural_offset):
-        info[2].append(choose_enh(p, acc))
-        p = add_fifth(p)
-    sharp_offset -= 1
-    natural_offset -= 1
+def circle_fourth(step):
+    step += 3
+    if step > 6:
+        step = step % 7
+    return step
 
 
-def is_mode(n, m):
-    if n in MODES[m][2]:
+def define_modes():
+    sharp_offset = 7
+    natural_offset = 7
+    for mode, info in MODES.items():
+        info.append([])
+        p = NOTES[info[1]][0]
+        acc = 0
+        for i in range(sharp_offset):
+            info[2].append(choose_enh(p, acc))
+            p = add_fifth(p)
+        acc = 1
+        for i in range(8 - sharp_offset):
+            info[2].append(choose_enh(p, acc))
+            p = add_fifth(p)
+        p = (NOTES[info[1]][0] + 11) % 12
+        acc = -1
+        for i in range(natural_offset):
+            info[2].append(choose_enh(p, acc))
+            p = add_fifth(p)
+        acc = 0
+        for i in range(7 - natural_offset):
+            info[2].append(choose_enh(p, acc))
+            p = add_fifth(p)
+        sharp_offset -= 1
+        natural_offset -= 1
+
+
+def is_mode(center, mode):
+    if center in MODES[mode][2]:
         return True
     else:
         return False
 
 
+def get_accidentals(total_accidentals, adjust_accidental, scale_len):
+    accidentals = [0] * scale_len
+    if total_accidentals == 0:
+        return accidentals
+    if total_accidentals > 0:
+        step = 3
+    if total_accidentals < 0:
+        step = 3
+    for i in range(abs(total_accidentals)):
+        if total_accidentals > 0:
+            step = circle_fourth(step)
+        if total_accidentals < 0:
+            step = circle_fourth(step)
+        accidentals[step] += adjust_accidental
+    return accidentals
+
+
 class KeySignature:
 
-    def __init__(self, center, amode):
+    def __init__(self, center, mode):
+        define_modes()
         self.center = center
-        self.mode = amode
+        self.mode = mode
+        self.scale_len = 7
         if not is_mode(self.center, self.mode):
             raise ValueError("Invalid key center/mode pair")
         self.rel_major = MODES["major"][2][MODES[self.mode][2].index(self.center)]
 
+    def find_accidentals(self):
+        scale_len = self.scale_len
+        total_accidentals = ACCIDENTALS[self.rel_major]
+        if total_accidentals > 0:
+            return get_accidentals(total_accidentals, SHARP, scale_len)
+        elif total_accidentals < 0:
+            return get_accidentals(total_accidentals, FLAT, scale_len)
+        else:
+            return get_accidentals(total_accidentals, NATURAL, scale_len)
 
-csharpminor = KeySignature("G#", "minor")
-print(csharpminor.rel_major)
+
+    def build_rel_major(self):
+        scale = []
+        tonic = NOTES[self.rel_major][0]
+        accidentals = self.find_accidentals()
+        print(accidentals)
+        for step in range(self.scale_len):
+            pitch = add_interval(tonic, MAJOR_STEPS[step])
+            print(pitch)
+            print(accidentals[step])
+            scale.append(choose_enh(pitch, accidentals[step]))
+        return scale
+
+
+
+gsharpminor = KeySignature("Bb", "minor")
+print(gsharpminor.rel_major)
+print(gsharpminor.build_rel_major())
 
