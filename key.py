@@ -13,6 +13,9 @@ NOTES = {"B#": (0, SHARP), "C": (0, NATURAL), "Dbb": (0, DBFLAT),
          "A#": (10, SHARP), "Bb": (10, FLAT),
          "B": (11, NATURAL), "Cb": (11, FLAT)}
 
+ACCIDENTALS = {"C": 0, "G": 1, "D": 2, "A": 3, "E": 4, "B": 5, "F#": 6, "C#": 7,
+               "F": -1, "Bb": -2, "Eb": -3, "Ab": -4, "Db": -5, "Gb": -6, "Cb": -7}
+
 FREQUENCIES = []
 
 MODES = {"lydian": [4, "F"], "major": [1, "C"], "mixolydian": [5, "G"],
@@ -30,6 +33,13 @@ def add_fifth(pitch):
     if pitch >= 12:
         pitch = pitch % 12
     return pitch
+
+
+def circle(step):
+    step += 3
+    if step > 7:
+        step = step % 7
+    return step
 
 
 sharp_offset = 7
@@ -65,4 +75,16 @@ def is_mode(n, m):
         return False
 
 
-print(is_mode("G#", "major"))
+class KeySignature:
+
+    def __init__(self, center, amode):
+        self.center = center
+        self.mode = amode
+        if not is_mode(self.center, self.mode):
+            raise ValueError("Invalid key center/mode pair")
+        self.rel_major = MODES["major"][2][MODES[self.mode][2].index(self.center)]
+
+
+csharpminor = KeySignature("G#", "minor")
+print(csharpminor.rel_major)
+
