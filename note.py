@@ -1,6 +1,12 @@
 from constants import *
 
 
+def constrain_chromatic(pitch):
+    if pitch >= TET:
+        pitch = pitch % TET
+    return pitch
+
+
 class Note:
 
     def __init__(self, pitch, enharmonic):
@@ -17,6 +23,9 @@ class Note:
         if self.in_key:
             pass
 
+    def __str__(self):
+        return f"<{self.name}>"
+
     def is_same(self, note2):
         if self.name == note2.name:
             return True
@@ -28,8 +37,8 @@ class Note:
         if enharmonic is None:
             enharmonic = self.enharmonic
         pitch += half_steps
-        if pitch >= TET:
-            pitch = pitch % TET
+        pitch = constrain_chromatic(pitch)
+        print(pitch, enharmonic)
         return Note(pitch, enharmonic)
 
     def add_fifth(self):

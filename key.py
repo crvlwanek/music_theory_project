@@ -50,6 +50,9 @@ class KeySignature:
             if notes.name == self.center.name:
                 self.rel_major = MODES["major"][2][MODES[self.mode][2].index(notes)]
 
+    def __str__(self):
+        return f"<KeySignature object: {self.center} {self.mode}>"
+
     def find_accidentals(self):
         scale_len = self.scale_len
         total_accidentals = ACCIDENTALS[self.rel_major.name]
@@ -72,8 +75,7 @@ class KeySignature:
 
 csharp = Note(1, 1)
 csharpminor = KeySignature(csharp, "minor")
-s = []
+print(csharpminor)
 for note in csharpminor.build_rel_major():
-    s.append(note.name)
-
+    print(note.name)
 
