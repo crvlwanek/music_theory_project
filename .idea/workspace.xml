@@ -11,7 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Added relative major scale, working only in sharp keys">
+      <change afterPath="$PROJECT_DIR$/constants/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/enharmonic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/pitch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +50,34 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chris\music_theory_project" />
+      <recent name="C:\Users\chris\music_theory_project\constants" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.key">
+    <configuration name="enharmonic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_theory_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\chris\music_theory_project\constants\enharmonic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="music_theory_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,9 +120,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="note" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_theory_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\chris\music_theory_project\note.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pitch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_theory_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\chris\music_theory_project\constants\pitch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.key" />
+        <item itemvalue="Python.note" />
+        <item itemvalue="Python.pitch" />
+        <item itemvalue="Python.enharmonic" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +208,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600818581358</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added relative major scale, working only in sharp keys">
+      <created>1600952259380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600952259380</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added relative major scale, working only in sharp keys">
+      <created>1600952334962</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600952334962</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,22 +249,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="127" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1600810060986" />
-    <state width="1308" height="163" key="GridCell.Tab.0.bottom" timestamp="1600869489737">
+    <state x="403" y="128" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600972618978">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600869489737" />
-    <state width="1308" height="163" key="GridCell.Tab.0.center" timestamp="1600869489737">
+    <state x="403" y="128" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600972618978" />
+    <state width="1308" height="163" key="GridCell.Tab.0.bottom" timestamp="1600977153807">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600869489737" />
-    <state width="1308" height="163" key="GridCell.Tab.0.left" timestamp="1600869489737">
+    <state width="1308" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
+    <state width="1308" height="163" key="GridCell.Tab.0.center" timestamp="1600977153807">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600869489737" />
-    <state width="1308" height="163" key="GridCell.Tab.0.right" timestamp="1600869489737">
+    <state width="1308" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
+    <state width="1308" height="163" key="GridCell.Tab.0.left" timestamp="1600977153807">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600869489737" />
+    <state width="1308" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
+    <state width="1308" height="163" key="GridCell.Tab.0.right" timestamp="1600977153807">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1308" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
+    <state x="223" y="96" key="MultipleFileMergeDialog" timestamp="1600952305703">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="223" y="96" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1600952305703" />
     <state x="174" y="18" key="SettingsEditor" timestamp="1600793917340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

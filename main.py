@@ -1,4 +1,4 @@
-from constants import NOTES, MODES, STEPS, TET
+from constants.constants import NOTES, MODES, STEPS, TET
 
 
 class KeySignature:
@@ -24,6 +24,56 @@ class KeySignature:
 
     def is_flat(self):
         pass
+
+    def find_accidentals(self):
+        scale_len = self.scale_len
+        total_accidentals = ACCIDENTALS[self.rel_major.name]
+        if total_accidentals > 0:
+            return get_accidentals(total_accidentals, SHARP, scale_len)
+        elif total_accidentals < 0:
+            return get_accidentals(total_accidentals, FLAT, scale_len)
+        else:
+            return get_accidentals(total_accidentals, NATURAL, scale_len)
+
+    def build_rel_major(self):
+        scale = []
+        tonic = NOTES[self.rel_major.name][0]
+        accidentals = self.find_accidentals()
+        for step in range(self.scale_len):
+            pitch = adjust_chromatic(tonic, MAJOR_STEPS[step])
+            scale.append(Note(pitch, accidentals[step]))
+        return scale
+
+    def add_fifth(pitch):
+        return adjust_chromatic(pitch, 7)
+
+    def circle_fifth(step):
+        step += 4
+        if step > 6:
+            step = step % 7
+        return step
+
+    def circle_fourth(step):
+        step += 3
+        if step > 6:
+            step = step % 7
+        return step
+
+    def get_accidentals(total_accidentals, adjust_accidental, scale_len):
+        accidentals = [0] * scale_len
+        if total_accidentals == 0:
+            return accidentals
+        if total_accidentals > 0:
+            step = 3
+        if total_accidentals < 0:
+            step = 3
+        for i in range(abs(total_accidentals)):
+            if total_accidentals > 0:
+                step = circle_fourth(step)
+            if total_accidentals < 0:
+                step = circle_fourth(step)
+            accidentals[step] += adjust_accidental
+        return accidentals
 
 
 gm_kso = KeySignature("G", "minor")
