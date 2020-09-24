@@ -10,16 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Added relative major scale, working only in sharp keys">
-      <change afterPath="$PROJECT_DIR$/constants/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/enharmonic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/pitch.py" afterDir="false" />
+    <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Added enharmonic and pitch classes">
+      <change afterPath="$PROJECT_DIR$/scale.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600952334962</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added enharmonic and pitch classes">
+      <created>1600977334381</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600977334381</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +243,8 @@
     <MESSAGE value="Added mode validation system" />
     <MESSAGE value="Added relative major attribute" />
     <MESSAGE value="Added relative major scale, working only in sharp keys" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added relative major scale, working only in sharp keys" />
+    <MESSAGE value="Added enharmonic and pitch classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added enharmonic and pitch classes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="127" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600810060986">
@@ -253,22 +255,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="403" y="128" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600972618978" />
-    <state width="1308" height="163" key="GridCell.Tab.0.bottom" timestamp="1600977153807">
+    <state width="1308" height="163" key="GridCell.Tab.0.bottom" timestamp="1600979878109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
-    <state width="1308" height="163" key="GridCell.Tab.0.center" timestamp="1600977153807">
+    <state width="1308" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
+    <state width="1308" height="163" key="GridCell.Tab.0.center" timestamp="1600979878109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
-    <state width="1308" height="163" key="GridCell.Tab.0.left" timestamp="1600977153807">
+    <state width="1308" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
+    <state width="1308" height="163" key="GridCell.Tab.0.left" timestamp="1600979878109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
-    <state width="1308" height="163" key="GridCell.Tab.0.right" timestamp="1600977153807">
+    <state width="1308" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
+    <state width="1308" height="163" key="GridCell.Tab.0.right" timestamp="1600979878109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600977153807" />
+    <state width="1308" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
     <state x="223" y="96" key="MultipleFileMergeDialog" timestamp="1600952305703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -277,10 +279,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="174" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600793917340" />
-    <state x="265" y="114" key="Vcs.Push.Dialog.v2" timestamp="1600870713312">
+    <state x="265" y="114" key="Vcs.Push.Dialog.v2" timestamp="1600977352534">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="265" y="114" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600870713312" />
+    <state x="265" y="114" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600977352534" />
     <state x="336" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600781363157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
