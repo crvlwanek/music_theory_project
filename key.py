@@ -96,12 +96,14 @@ def get_accidentals(total_accidentals, adjust_accidental, scale_len):
     if total_accidentals > 0:
         step = 3
     if total_accidentals < 0:
-        step = 3
+        step = 2
+        for i in range(abs(total_accidentals)):
+            step = circle_fourth(step)
     for i in range(abs(total_accidentals)):
         if total_accidentals > 0:
             step = circle_fourth(step)
         if total_accidentals < 0:
-            step = circle_fourth(step)
+            step = circle_fifth(step)
         accidentals[step] += adjust_accidental
     return accidentals
 
@@ -142,7 +144,7 @@ class KeySignature:
 
 
 
-gsharpminor = KeySignature("Bb", "minor")
+gsharpminor = KeySignature("G#", "minor")
 print(gsharpminor.rel_major)
 print(gsharpminor.build_rel_major())
 
