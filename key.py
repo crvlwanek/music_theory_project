@@ -22,8 +22,6 @@ MODES = {"lydian": (("F", "C", "G", "D", "A", "E", "B", "F#",
          "locrian": (("B", "F#", "C#", "G#", "D#", "A#", "E#", "B#",
                      "Bb", "F", "C", "G", "D", "A", "E"), (1, 2, 2, 1, 2, 2, 2))}
 
-MAJOR_STEPS = [0, 2, 2, 1, 2, 2, 1]
-
 
 class KeySignature:
 

@@ -10,10 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Added enharmonic and pitch classes">
-      <change afterPath="$PROJECT_DIR$/scale.py" afterDir="false" />
+    <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Started scale class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/constants.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/scale.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600977334381</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Started scale class">
+      <created>1600981897856</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600981897856</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,7 +254,8 @@
     <MESSAGE value="Added relative major attribute" />
     <MESSAGE value="Added relative major scale, working only in sharp keys" />
     <MESSAGE value="Added enharmonic and pitch classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added enharmonic and pitch classes" />
+    <MESSAGE value="Started scale class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started scale class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="127" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600810060986">
@@ -255,22 +266,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="403" y="128" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600972618978" />
-    <state width="1308" height="163" key="GridCell.Tab.0.bottom" timestamp="1600979878109">
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom" timestamp="1601003117630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
-    <state width="1308" height="163" key="GridCell.Tab.0.center" timestamp="1600979878109">
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601003117630" />
+    <state width="1345" height="178" key="GridCell.Tab.0.center" timestamp="1601003117630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
-    <state width="1308" height="163" key="GridCell.Tab.0.left" timestamp="1600979878109">
+    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601003117630" />
+    <state width="1345" height="178" key="GridCell.Tab.0.left" timestamp="1601003117630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
-    <state width="1308" height="163" key="GridCell.Tab.0.right" timestamp="1600979878109">
+    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601003117630" />
+    <state width="1345" height="178" key="GridCell.Tab.0.right" timestamp="1601003117630">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600979878109" />
+    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601003117630" />
     <state x="223" y="96" key="MultipleFileMergeDialog" timestamp="1600952305703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

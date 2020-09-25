@@ -55,6 +55,17 @@ class Note:
 NOTES = {name: Note(value[0].index, value[1].quantifier) for name, value in CHROMATIC.items()}
 
 
+def constrain_chromatic(index):
+    if index >= TET:
+        index %= TET
+        constrain_chromatic(index)
+    if index < 0:
+        index += TET
+        constrain_chromatic(index)
+    else:
+        return index
+
+
 def pick_note(name):
     return NOTES[name]
 
@@ -62,13 +73,13 @@ def pick_note(name):
 def find_note(index, quantifier):
     for name, values in CHROMATIC.items():
         if (find_pitch(index), find_enharmonic(quantifier)) == values:
-            return NOTES[name]
+            return pick_note(name)
 
 
 def adjust_note(note, half_steps, quantifier=None):
     if quantifier is None:
         quantifier = note.enharmonic.quantifier
-    return find_note(note.pitch.index + half_steps, quantifier)
+    return find_note(constrain_chromatic(note.pitch.index + half_steps), quantifier)
 
 
 def add_fifth(note, quantifier=None):
