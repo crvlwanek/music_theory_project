@@ -29,7 +29,18 @@ class Pitch:
 PITCHES = [Pitch(i) for i in range(TET)]
 
 
+def constrain_chromatic(index):
+    if index >= TET:
+        index %= TET
+        constrain_chromatic(index)
+    if index < 0:
+        index += TET
+        constrain_chromatic(index)
+    else:
+        return index
+
+
 def find_pitch(index):
     for pitch in PITCHES:
-        if index == pitch.index:
+        if constrain_chromatic(index) == pitch.index:
             return pitch

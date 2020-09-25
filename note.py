@@ -79,7 +79,7 @@ def find_note(index, quantifier):
 def adjust_note(note, half_steps, quantifier=None):
     if quantifier is None:
         quantifier = note.enharmonic.quantifier
-    return find_note(constrain_chromatic(note.pitch.index + half_steps), quantifier)
+    return find_note((note.pitch.index + half_steps), quantifier)
 
 
 def add_fifth(note, quantifier=None):
