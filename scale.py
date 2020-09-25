@@ -25,6 +25,7 @@ class Scale:
         else:  # Later implementation may be subclass of Scale
             self.length = len(scale_type)
         self.key = key
+        self.name = f"{self.key.name} scale"
         self.accidentals = [0] * 7
         # num_accidental Syntax: (flat, sharps)
         if self.key.accidentals[0] == 0 and self.key.accidentals[1] != 0:
@@ -35,7 +36,7 @@ class Scale:
         self.build_scale()
 
     def __str__(self):
-        return f"<{self.key.name} scale>"
+        return f"<{self.name}>"
 
     def add_sharps(self, num_sharps, step_start):
         for i in range(num_sharps):
@@ -54,8 +55,10 @@ class Scale:
             scale_step += half_step
 
 
-ab = Note(8, -1)
-abminor = KeySignature(ab, "minor")
-so = Scale(abminor)
-for note in so.scale:
-    print(note.name)
+# Scales can be printed with the following syntax:
+#
+#   note_object = Note(8, -1)
+#   ks_object = KeySignature(note_object, "minor")
+#   scale_object = Scale(ks_object)
+#   for note in scale_object.scale:
+#       print(note.name, end=' ')

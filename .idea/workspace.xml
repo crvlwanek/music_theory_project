@@ -10,11 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Removed outdated files">
+    <list default="true" id="3034a9d0-b979-409a-8974-1ae3dc745922" name="Default Changelist" comment="Working scale class">
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/pitch.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/pitch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/scale.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +50,7 @@
       <recent name="C:\Users\chris\music_theory_project\constants" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.scale">
+  <component name="RunManager" selected="Python.main">
     <configuration name="enharmonic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="music_theory_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -261,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601004451917</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Working scale class">
+      <created>1601049463416</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601049463416</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,7 +289,8 @@
     <MESSAGE value="Added enharmonic and pitch classes" />
     <MESSAGE value="Started scale class" />
     <MESSAGE value="Removed outdated files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed outdated files" />
+    <MESSAGE value="Working scale class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working scale class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="127" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600810060986">
@@ -295,22 +301,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="403" y="128" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600972618978" />
-    <state width="1308" height="178" key="GridCell.Tab.0.bottom" timestamp="1601049422943">
+    <state width="1308" height="178" key="GridCell.Tab.0.bottom" timestamp="1601058430459">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601049422943" />
-    <state width="1308" height="178" key="GridCell.Tab.0.center" timestamp="1601049422943">
+    <state width="1308" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601058430459" />
+    <state width="1308" height="178" key="GridCell.Tab.0.center" timestamp="1601058430459">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601049422943" />
-    <state width="1308" height="178" key="GridCell.Tab.0.left" timestamp="1601049422943">
+    <state width="1308" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601058430459" />
+    <state width="1308" height="178" key="GridCell.Tab.0.left" timestamp="1601058430459">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601049422943" />
-    <state width="1308" height="178" key="GridCell.Tab.0.right" timestamp="1601049422943">
+    <state width="1308" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601058430459" />
+    <state width="1308" height="178" key="GridCell.Tab.0.right" timestamp="1601058430459">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1308" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601049422943" />
+    <state width="1308" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601058430459" />
     <state x="223" y="96" key="MultipleFileMergeDialog" timestamp="1600952305703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -319,10 +325,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="174" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600793917340" />
-    <state x="265" y="114" key="Vcs.Push.Dialog.v2" timestamp="1601004462495">
+    <state x="265" y="114" key="Vcs.Push.Dialog.v2" timestamp="1601049470754">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="265" y="114" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601004462495" />
+    <state x="265" y="114" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601049470754" />
     <state x="336" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600781363157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
