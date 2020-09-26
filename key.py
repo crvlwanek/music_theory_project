@@ -33,14 +33,16 @@ MODES = {"lydian":     (("F", "C", "G", "D", "A", "E", "B", "F#",
 class KeySignature:
 
     def __init__(self, center, mode):
+
         self.center = center
         self.mode = mode
+        self.name = self.center.name + ' ' + mode
+
         self.accidentals = None
         if not self.is_mode():
             raise ValueError("Invalid key center/mode pair")
         self.steps = MODES[self.mode][1]
         self.step_start = MODES[self.mode][2]
-        self.name = self.center.name + ' ' + mode
 
     def __str__(self):
         return f"<KeySignature object: {self.center} {self.mode}>"
@@ -51,4 +53,3 @@ class KeySignature:
                 if value == self.center.name and name == self.mode:
                     self.accidentals = ACCIDENTALS[values[0].index(value)]
                     return True
-

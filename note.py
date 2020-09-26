@@ -19,6 +19,7 @@ CHROMATIC = {"B#": (PITCHES[0], SHARP), "C": (PITCHES[0], NATURAL), "Dbb": (PITC
 class Note:
 
     def __init__(self, pitch, enharmonic):
+
         try:
             self.pitch = PITCHES[pitch]
         except:
