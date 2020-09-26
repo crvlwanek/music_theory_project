@@ -1,31 +1,30 @@
-from constants import NOTES, MODES, STEPS, TET
+from scale import *
 
+"""
+MUSIC THEORY PROJECT
+- currently builds a scale of note objects
+- working in every key and all modes of the
+  major scale
+"""
 
-class KeySignature:
+print("This program builds a scale from a note and major scale mode of your choice")
 
-    def __init__(self, center, mode):
-        self.center = center
-        self.mode = mode
-        for note in NOTES:
-            if note.count(center):
-                self.center_chr = NOTES.index(note)
-                self.center_enh = note.index(center)
-
-    def build_scale(self):
-        center = self.center_chr
-        mode = MODES.index(self.mode)
-        steps = STEPS[mode:] + [step + TET for step in STEPS[:mode]]
-        steps[:] = [step - STEPS[mode] for step in steps]
-        scale = [NOTES[(center + step) % TET] for step in steps]
-        return scale
-
-    def is_sharp(self):
-        pass
-
-    def is_flat(self):
-        pass
-
-
-gm_kso = KeySignature("G", "minor")
-g_minor_scale = gm_kso.build_scale()
-print(g_minor_scale)
+while True:
+    note_name = input("Pick a note to be your key center:\n")
+    try:
+        center = pick_note(note_name[0].upper() + note_name[1:])
+    except KeyError:
+        print("Please enter a valid note name (ex. Ab, C, F#)\n")
+        continue
+    mode_name = input(f"Pick a mode for your {center.name} scale:\n")
+    try:
+        kso = KeySignature(center, mode_name.lower())
+    except ValueError:
+        print(f"{note_name} {mode_name} is not a valid key center/mode pair, please try another")
+        continue
+    scale = Scale(kso)
+    print()
+    print(f"Here is your {scale.name}:")
+    for note in scale.scale:
+        print(note.name, end=' ')
+    print("\n")

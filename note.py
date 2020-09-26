@@ -1,24 +1,42 @@
-from constants import *
+from constants.enharmonic import *
+from constants.pitch import *
 
-
-def constrain_chromatic(pitch):
-    if pitch >= TET:
-        pitch = pitch % TET
-    return pitch
+# Defining each note by its pitch and enharmonic values
+CHROMATIC = {"B#": (PITCHES[0], SHARP), "C": (PITCHES[0], NATURAL), "Dbb": (PITCHES[0], DBFLAT),
+             "C#": (PITCHES[1], SHARP), "Db": (PITCHES[1], FLAT),
+             "C##": (PITCHES[2], DBSHARP), "D": (PITCHES[2], NATURAL), "Ebb": (PITCHES[2], DBFLAT),
+             "D#": (PITCHES[3], SHARP), "Eb": (PITCHES[3], FLAT),
+             "E": (PITCHES[4], NATURAL), "Fb": (PITCHES[4], FLAT),
+             "E#": (PITCHES[5], SHARP), "F": (PITCHES[5], NATURAL),
+             "F#": (PITCHES[6], SHARP), "Gb": (PITCHES[6], FLAT),
+             "F##": (PITCHES[7], DBSHARP), "G": (PITCHES[7], NATURAL), "Abb": (PITCHES[7], DBFLAT),
+             "G#": (PITCHES[8], SHARP), "Ab": (PITCHES[8], FLAT),
+             "G##": (PITCHES[9], DBSHARP), "A": (PITCHES[9], NATURAL), "Bbb": (PITCHES[9], DBFLAT),
+             "A#": (PITCHES[10], SHARP), "Bb": (PITCHES[10], FLAT),
+             "B": (PITCHES[11], NATURAL), "Cb": (PITCHES[11], FLAT)}
 
 
 class Note:
 
     def __init__(self, pitch, enharmonic):
-        self.pitch = pitch
-        self.enharmonic = enharmonic
-        for name, info in NOTES.items():
-            if info == (self.pitch, self.enharmonic):
+        try:
+            self.pitch = PITCHES[pitch]
+        except:
+            raise ValueError(f"Pitch <{pitch}> not found")
+        for sign, value in ENHARMONICS.items():
+            if value[0] == enharmonic:
+                self.enharmonic = value[1]
+        try:
+            self.enharmonic
+        except AttributeError:
+            raise ValueError(f"Enharmonic <{enharmonic}> not found")
+        for name, value in CHROMATIC.items():
+            if value == (self.pitch, self.enharmonic):
                 self.name = name
         try:
             self.name
         except AttributeError:
-            raise ValueError("Note not found")
+            raise ValueError(f"Note ({self.pitch}, {self.enharmonic}) not found")
         self.in_scale = self.in_chord = self.in_key = False
         if self.in_key:
             pass
@@ -32,56 +50,37 @@ class Note:
         else:
             return False
 
-    def adjust_chromatic(self, half_steps, enharmonic=None):
-        pitch = self.pitch
-        if enharmonic is None:
-            enharmonic = self.enharmonic
-        pitch += half_steps
-        pitch = constrain_chromatic(pitch)
-        return Note(pitch, enharmonic)
 
-    def add_fifth(self):
-        return self.adjust_chromatic(7)
+# Syntax: {name: Note}
+NOTES = {name: Note(value[0].index, value[1].quantifier) for name, value in CHROMATIC.items()}
 
 
-def adjust_chromatic(pitch, half_steps):
-    pitch += half_steps
-    if pitch >= 12:
-        pitch = pitch % 12
-    return pitch
+def constrain_chromatic(index):
+    if index >= TET:
+        index %= TET
+        constrain_chromatic(index)
+    if index < 0:
+        index += TET
+        constrain_chromatic(index)
+    else:
+        return index
 
 
-def add_fifth(pitch):
-    return adjust_chromatic(pitch, 7)
+def pick_note(name):
+    return NOTES[name]
 
 
-def circle_fifth(step):
-    step += 4
-    if step > 6:
-        step = step % 7
-    return step
+def find_note(index, quantifier):
+    for name, values in CHROMATIC.items():
+        if (find_pitch(index), find_enharmonic(quantifier)) == values:
+            return pick_note(name)
 
 
-def circle_fourth(step):
-    step += 3
-    if step > 6:
-        step = step % 7
-    return step
+def adjust_note(note, half_steps, quantifier=None):
+    if quantifier is None:
+        quantifier = note.enharmonic.quantifier
+    return find_note((note.pitch.index + half_steps), quantifier)
 
 
-def get_accidentals(total_accidentals, adjust_accidental, scale_len):
-    accidentals = [0] * scale_len
-    if total_accidentals == 0:
-        return accidentals
-    if total_accidentals > 0:
-        step = 3
-    if total_accidentals < 0:
-        step = 3
-    for i in range(abs(total_accidentals)):
-        if total_accidentals > 0:
-            step = circle_fourth(step)
-        if total_accidentals < 0:
-            step = circle_fourth(step)
-        accidentals[step] += adjust_accidental
-    return accidentals
-
+def add_fifth(note, quantifier=None):
+    return adjust_note(note, 7, quantifier)
