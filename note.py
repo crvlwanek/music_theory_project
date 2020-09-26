@@ -38,7 +38,6 @@ class Note:
             enharmonic = self.enharmonic
         pitch += half_steps
         pitch = constrain_chromatic(pitch)
-        print(pitch, enharmonic)
         return Note(pitch, enharmonic)
 
     def add_fifth(self):

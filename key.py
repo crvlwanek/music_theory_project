@@ -2,28 +2,31 @@ from note import *
 
 
 def define_modes():
-    sharp_offset = 7
-    natural_offset = 7
+    sharp_offset = 6
+    natural_offset = 6
     for mode, info in MODES.items():
         info.append([])
-        pitch = NOTES[info[1]][0]
-        enharmonic = 0
+        add = Note(NOTES[info[1]][0], 0)
+        info[2].append(add)
         for i in range(sharp_offset):
-            info[2].append(Note(pitch, enharmonic))
-            pitch = add_fifth(pitch)
-        enharmonic = 1
-        for i in range(8 - sharp_offset):
-            info[2].append(Note(pitch, enharmonic))
-            pitch = add_fifth(pitch)
-        pitch = (NOTES[info[1]][0] + 11) % 12
-        enharmonic = -1
+            add = add.add_fifth()
+            info[2].append(add)
+        add = add.adjust_chromatic(7, 1)
+        info[2].append(add)
+        for i in range(6 - sharp_offset):
+            add = add.add_fifth()
+            info[2].append(add)
+        add = add.adjust_chromatic(10, -1)
+        info[2].append(add)
         for i in range(natural_offset):
-            info[2].append(Note(pitch, enharmonic))
-            pitch = add_fifth(pitch)
-        enharmonic = 0
-        for i in range(7 - natural_offset):
-            info[2].append(Note(pitch, enharmonic))
-            pitch = add_fifth(pitch)
+            add = add.add_fifth()
+            info[2].append(add)
+        if natural_offset < 6:
+            add = add.adjust_chromatic(7, 0)
+            info[2].append(add)
+            for i in range(5 - natural_offset):
+                add = add.add_fifth()
+                info[2].append(add)
         sharp_offset -= 1
         natural_offset -= 1
 
@@ -73,9 +76,6 @@ class KeySignature:
         return scale
 
 
-csharp = Note(1, 1)
-csharpminor = KeySignature(csharp, "minor")
-print(csharpminor)
-for note in csharpminor.build_rel_major():
-    print(note.name)
-
+bflat = Note(10, -1)
+bflat_major = KeySignature(bflat, "minor")
+print(bflat_major.rel_major)
