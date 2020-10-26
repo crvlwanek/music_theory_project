@@ -1,4 +1,5 @@
-from key import *
+from setup.constants.enharmonic import FLAT, SHARP
+from setup.pitchclass import find_pitch_class
 
 
 def constrain_step(step):
@@ -18,9 +19,9 @@ def circle_fourth(step):
 
 
 class Scale:
-
+    # key --> KeySignature
     def __init__(self, key, scale_type=None):
-        # Set-up
+        # Set-up ----------------------------------------------------
         self.key = key
         self.name = f"{self.key.name} scale"
         # Scale length and type
@@ -36,14 +37,19 @@ class Scale:
         if self.key.accidentals[0] != 0 and self.key.accidentals[1] == 0:
             self.add_flats(self.key.accidentals[0], self.key.step_start[0])
         # Building scale
-        self.notes = []
+        self.pitch_classes = []
         self.build_scale()
 
-    def __str__(self):
-        return f"<{self.name}>"
+    def __repr__(self):
+        return f"{self.__class__.__name__} object: {self.name}"
+
+    def __eq__(self, other):
+        if other.__class__ != self.__class__:
+            raise ValueError(f"Operand not supported for types: \'{other.__class__}\' and \'{self.__class__}\'")
+        return self.name == other.name
 
     def __iter__(self):
-        return (note for note in self.notes)
+        return (pitch_class for pitch_class in self.pitch_classes)
 
     def add_sharps(self, num_sharps, step_start):
         for i in range(num_sharps):
@@ -58,8 +64,10 @@ class Scale:
     def build_scale(self):
         scale_step = self.key.center.pitch.index
         for half_step, quantifier in zip(self.key.steps, self.accidentals):
-            self.notes.append(find_note(scale_step, quantifier))
+            self.pitch_classes.append(find_pitch_class(scale_step, quantifier))
             scale_step += half_step
+
+    # -----------------------------------------------------------
 
 
 # Scales can be printed with the following syntax:

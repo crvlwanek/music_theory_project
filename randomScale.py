@@ -1,9 +1,10 @@
-# Picks a random key to do scales in
-
 import random
-from scale import Scale
-from key import KeySignature
-from note import pick_note
+from setup.scale import Scale
+from setup.key import KeySignature
+from setup.pitchclass import PitchClass
+
+# Picks a random major/minor scale and
+# prints it to the screen
 
 KEYS = ['C', 'a', 'F', 'd', 'Bb', 'g', 'Eb', 'c', 'Ab', 'f', 'Db', 'bb',
         'Gb', 'eb', 'B', 'g#', 'E', 'c#', 'A', 'f#', 'D', 'b', 'G', 'e']
@@ -18,7 +19,7 @@ else:
     k = k.capitalize()
     mode = 'minor'
 
-note = pick_note(k)
+note = PitchClass(k)
 key = KeySignature(note, mode)
 
 print(f'Your key is {key.name}')

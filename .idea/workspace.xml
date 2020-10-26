@@ -19,12 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df22e5f3-bf25-4d93-af30-b266e75c0106" name="Default Changelist" comment="Added str values to classes">
-      <change afterPath="$PROJECT_DIR$/randomScale.py" afterDir="false" />
+    <list default="true" id="df22e5f3-bf25-4d93-af30-b266e75c0106" name="Default Changelist" comment="Implemented randomScale.py">
+      <change afterPath="$PROJECT_DIR$/setup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/constants/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/constants/values.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/newnote.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/music_theory_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/music_theory_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/note.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/scale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/playScale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/enharmonic.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/constants/enharmonic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/pitch.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/constants/pitch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/key.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/pitchclass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/randomScale.py" beforeDir="false" afterPath="$PROJECT_DIR$/randomScale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/scale.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +58,36 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.randomScale">
-    <configuration name="key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris Wanek\Desktop\music_theory_project\setup" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="enharmonic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_theory_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/setup/constants" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup/constants/enharmonic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="music_theory_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,7 +99,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/key.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="newnote" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_theory_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/setup" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup/newnote.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pitchclass" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_theory_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/setup" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup/pitchclass.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,8 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.randomScale" />
-        <item itemvalue="Python.key" />
+        <item itemvalue="Python.pitchclass" />
+        <item itemvalue="Python.enharmonic" />
+        <item itemvalue="Python.newnote" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601133311050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented randomScale.py">
+      <created>1601136341833</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601136341833</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,32 +236,37 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added str values to classes" />
     <MESSAGE value="Relative major" />
-    <option name="LAST_COMMIT_MESSAGE" value="Relative major" />
+    <MESSAGE value="Implemented randomScale.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented randomScale.py" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1362" height="206" key="GridCell.Tab.0.bottom" timestamp="1601135762115">
+    <state width="1362" height="206" key="GridCell.Tab.0.bottom" timestamp="1603748713659">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1362" height="206" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1601135762115" />
-    <state width="1362" height="206" key="GridCell.Tab.0.center" timestamp="1601135762115">
+    <state width="1362" height="206" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603748713659" />
+    <state width="1362" height="206" key="GridCell.Tab.0.center" timestamp="1603748713658">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1362" height="206" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1601135762115" />
-    <state width="1362" height="206" key="GridCell.Tab.0.left" timestamp="1601135762115">
+    <state width="1362" height="206" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603748713658" />
+    <state width="1362" height="206" key="GridCell.Tab.0.left" timestamp="1603748713658">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1362" height="206" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1601135762115" />
-    <state width="1362" height="206" key="GridCell.Tab.0.right" timestamp="1601135762115">
+    <state width="1362" height="206" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603748713658" />
+    <state width="1362" height="206" key="GridCell.Tab.0.right" timestamp="1603748713658">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1362" height="206" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1601135762115" />
+    <state width="1362" height="206" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603748713658" />
     <state x="432" y="212" key="MultipleFileMergeDialog" timestamp="1601133274818">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="432" y="212" key="MultipleFileMergeDialog/0.0.1600.860@0.0.1600.860" timestamp="1601133274818" />
-    <state x="386" y="184" key="Vcs.Push.Dialog.v2" timestamp="1600884819292">
+    <state x="295" y="96" key="SettingsEditor" timestamp="1601676107881">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="386" y="184" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1600884819292" />
+    <state x="295" y="96" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1601676107881" />
+    <state x="386" y="184" key="Vcs.Push.Dialog.v2" timestamp="1601136347961">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="386" y="184" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1601136347961" />
   </component>
 </project>

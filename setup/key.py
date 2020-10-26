@@ -1,5 +1,3 @@
-from note import *
-
 # Accidentals in 15 keys with syntax: (num_flats, num_sharps)
 ACCIDENTALS = ((0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7),
                (7, 0), (6, 0), (5, 0), (4, 0), (3, 0), (2, 0), (1, 0))
@@ -31,9 +29,9 @@ MODES = {"lydian":     (("F", "C", "G", "D", "A", "E", "B", "F#",
 
 
 class KeySignature:
-
+    # center, mode --> PitchClass, str
     def __init__(self, center, mode):
-
+        # Set-up ----------------------------------------------------
         self.center = center
         self.mode = mode
         self.name = self.center.name + ' ' + mode
@@ -44,12 +42,18 @@ class KeySignature:
         self.steps = MODES[self.mode][1]
         self.step_start = MODES[self.mode][2]
 
-    def __str__(self):
-        return f"<KeySignature object: {self.center} {self.mode}>"
+    def __repr__(self):
+        return f"{self.__class__.__name__} object: {self.name}"
+
+    def __eq__(self, other):
+        if other.__class__ != self.__class__:
+            raise ValueError(f"Operand not supported for types: \'{other.__class__}\' and \'{self.__class__}\'")
+        return self.name == other.name
 
     def is_mode(self):
-        for name, values in MODES.items():
-            for value in values[0]:
-                if value == self.center.name and name == self.mode:
-                    self.accidentals = ACCIDENTALS[values[0].index(value)]
-                    return True
+        for index, name in enumerate(MODES[self.mode][0]):
+            if name == self.center.name:
+                self.accidentals = ACCIDENTALS[index]
+                return True
+
+    # -----------------------------------------------------------

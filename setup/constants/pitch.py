@@ -2,17 +2,25 @@ TET = 12  # Future-proofing to implement other equal temperaments
 
 
 class Pitch:
-
+    # index --> int
     def __init__(self, index):
-        self.index = index
+        # Set-up ----------------------------------------------------
         try:
-            int(self.index)
+            int(index)
         except ValueError:
-            raise ValueError(f"<{self.index}> is not a valid pitch")
+            raise ValueError(f"<{index}> is not a valid pitch")
+        self.index = index
         self.constrain_chromatic()
 
-    def __str__(self):
-        return f"{self.index}"
+    def __repr__(self):
+        return f"{self.__class__.__name__} object: {self.index}"
+
+    def __eq__(self, other):
+        if other.__class__ != self.__class__:
+            raise ValueError(f"Operand not supported for types: \'{other.__class__}\' and \'{self.__class__}\'")
+        return self.index == other.index
+
+        # -----------------------------------------------------------
 
     def constrain_chromatic(self):
         if self.index >= TET:
@@ -38,9 +46,3 @@ def constrain_chromatic(index):
         constrain_chromatic(index)
     else:
         return index
-
-
-def find_pitch(index):
-    for pitch in PITCHES:
-        if constrain_chromatic(index) == pitch.index:
-            return pitch
